@@ -1,2 +1,0 @@
-# ConsoleCalculator
-Simple console calculator

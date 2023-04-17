@@ -38,7 +38,7 @@ public class Assets {
 						+ "\n"
 						+ "Usage:\n"
 						+ "Value 1: [value 1] <Enter first value e.g: 45 or 3.14>\n"
-						+ "Operator: [operator] <Enter operator (Check operators list below>\n"
+						+ "Operator: [operator] <Enter operator (Check operators list below)>\n"
 						+ "Value 2: [value 2] <Enter second value e.g: 45 or 3.14. IMPORTANT! You dont need to enter "
 						 											+"secong value if you are using \"root\" operator>\n"
 						+ "Would you want to continue? (Y/n): [Y] or [n] <Enter \"Y\"> if you want to continue>\n"
@@ -49,7 +49,9 @@ public class Assets {
 						+ "\"*\", \"multip\", \"multipl\", \"multiply\";\n"
 						+ "\"/\", \":\", \"division\", \"div\";\n"
 						+ "\"sqrt\", \"root\", \"rt\"};\r\n"
-						+ "\"^\", \"power\", \"pow\";");
+						+ "\"^\", \"power\", \"pow\";"
+						+ "\"cubedroot\", \"cbrt\", \"3rt\";"
+						+ "\"logarithm\", \"log\"");
 	}
 	
 }

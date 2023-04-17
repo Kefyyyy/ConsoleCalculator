@@ -8,7 +8,8 @@
  * 
  * 
  * PatchNotes:
- * 1.1 - added starting message and able to enter help command 
+ * 1.1 - added starting message and able to enter help command
+ * 1.2 - added logarithm
  * 
  */
 
@@ -56,18 +57,20 @@ public class Main {
 		int j = 0;
 		boolean isFound = false;
 		
-		//2D array of valid operators
-		
-		String[][] validOperators = { 	{ "+", "plus" },
-										{ "-", "minus" },
+		// 2D array of valid operators
+
+		String[][] validOperators = { 
+										{ "+", "plus" }, { "-", "minus" },
 										{ "*", "multip", "multipl", "multiply" },
 										{ "/", ":", "division", "div", },
-										{ "sqrt", "root", "rt"},
-										{ "^", "power", "pow"}
+										{ "sqrt", "root", "rt" }, 
+										{ "^", "power", "pow" },
+										{ "cubedroot", "cbrt", "3rt" },
+										{ "logarithm", "log"}
 									};
 
 		// Get first value
-		
+
 		do {
 			n1 = Assets.getDoubleInput("Value 1: ");
 		} while (n1.isNaN());
@@ -110,6 +113,10 @@ public class Main {
 			System.out.println("Squared root from " + n1 + " = " + Math.sqrt(n1));
 			return;
 		}
+		if (operator.equals("cubedroot") || operator.equals("cbrt") || operator.equals("3rt")) {
+			System.out.println("Cubed root from " + n1 + " = " + Math.cbrt(n1));
+			return;
+		}
 
 		// Get second value
 
@@ -118,7 +125,7 @@ public class Main {
 		} while (n2.isNaN());
 
 		// Calculations
-		
+
 		if (operator.equals("-") || operator.equals("minus")) {
 			System.out.println(n1 + " - " + n2 + " = " + (n1 - n2));
 		} else if (operator.equals("+") || operator.equals("plus")) {
@@ -131,6 +138,9 @@ public class Main {
 			System.out.println(n1 + " * " + n2 + " = " + (n1 * n2));
 		} else if (operator.equals("^") || operator.equals("power") || operator.equals("pow")) {
 			System.out.println(n1 + " ^ " + n2 + " = " + Math.pow(n1, n2));
+		} else if (operator.equals("logarithm") || operator.equals("log")) {
+			System.out.println("log " + n1 + " based " + n2 + " = " + (Math.log(n1) / (Math.log(n2))));
 		}
+
 	}
 }

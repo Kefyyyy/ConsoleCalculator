@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author kefyyyy
- *
- */
-module Calculator {
-}

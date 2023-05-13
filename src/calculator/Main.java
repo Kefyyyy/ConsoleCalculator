@@ -1,5 +1,5 @@
 /*
- * Calculator v1.4
+ * Calculator v1.4.4release
  * by @Kefyyyy with @Lethax help
  * 
  * Was created in 3 days as a first java project
@@ -11,8 +11,7 @@
  * 1.1 - added starting message and able to enter help command
  * 1.2 - added logarithm
  * 1.3 - fixes
- * 1.4, 1.4.1alpha, 1.4.2beta, 1.4.3prerealese
- * 1.4.4realese - added factorial, double factorial & fixes
+ * 1.4.4 - release 1.4, fixes, added factorial and double factorial
  */
 
 package calculator;
@@ -26,7 +25,7 @@ public class Main {
 
 		// Starting
 		
-		String start = Assets.input("Calculator-v1.1\nType help for info or any else to continue: ").trim();
+		String start = Assets.input("Calculator-v1.4.4release\nType help for info or any else to continue: ").trim();
 		if (start.equals("help") || start.equals("info") || start.equals("list") || start.equals("ls")) {
 			Assets.info();
 		}
@@ -87,6 +86,7 @@ public class Main {
 			// Ask for operator
 
 			operator = Assets.input("operator: ");
+			operator = operator.toLowerCase();
 
 			// Compare operator with operators list
 
@@ -94,7 +94,7 @@ public class Main {
 
 				for (j = 0; j < validOperators[i].length; j++) {
 
-					if (operator.equals(validOperators[i][j])) {
+					if ((operator.toLowerCase()).equals(validOperators[i][j])) {
 						// Debug log
 						// System.out.println("operator verification success: " + operator);
 						isFound = true;
@@ -133,7 +133,7 @@ public class Main {
 		}
 		
 		// Double Factorial
-		else if (operator.equals("!!")) {
+		else if (operator.equals("!!") || operator.equals("df") || operator.equals("dfact") || operator.equals("dfactorial")) {
 			System.out.println(n1+"!! = "+ Assets.DoubleFactorial(n1));
 			return;
 		}

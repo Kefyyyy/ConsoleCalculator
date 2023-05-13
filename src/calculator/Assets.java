@@ -71,14 +71,14 @@ public class Assets {
 
 	public static void info() {
 		System.out.println("Info: \n"
-						+ "Simple calculator v1.1\n"
+						+ "Simple calculator v1.4.4release\n"
 						+ "by @Kefyyyy with @Lethax help\n"
 						+ "\n"
 						+ "Usage:\n"
 						+ "Value 1: [value 1] <Enter first value e.g: 45 or 3.14>\n"
 						+ "Operator: [operator] <Enter operator (Check operators list below)>\n"
 						+ "Value 2: [value 2] <Enter second value e.g: 45 or 3.14. IMPORTANT! You dont need to enter "
-						 											+"secong value if you are using \"root\" operator>\n"
+						 											+"secong value if you are using root, (double) factorial operator>\n"
 						+ "Would you want to continue? (Y/n): [Y] or [n] <Enter \"Y\"> if you want to continue>\n"
 						+ "\n"
 						+ "Operators list:\n"
@@ -86,12 +86,12 @@ public class Assets {
 						+ "\"-\", \"minus\";\n"
 						+ "\"*\", \"multip\", \"multipl\", \"multiply\";\n"
 						+ "\"/\", \":\", \"division\", \"div\";\n"
-						+ "\"sqrt\", \"root\", \"rt\"};\r\n"
+						+ "\"sqrt\", \"root\", \"rt\";\r\n"
 						+ "\"^\", \"power\", \"pow\";\n"
 						+ "\"cubedroot\", \"cbrt\", \"3rt\";\n"
 						+ "\"logarithm\", \"log\";\n"
 						+ "\"!\", \"f\", \"fact\", \"factorial\";\n"
-						+ "\"!!\", \"df\", \"dfact\", \"dfactorial\"\n");
+						+ "\"!!\", \"df\", \"dfact\", \"dfactorial\";\n");
 	}
 	
 }

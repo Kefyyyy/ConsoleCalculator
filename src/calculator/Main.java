@@ -1,5 +1,5 @@
 /*
- * Calculator v1.00
+ * Calculator v1.4
  * by @Kefyyyy with @Lethax help
  * 
  * Was created in 3 days as a first java project
@@ -8,8 +8,11 @@
  * 
  * 
  * PatchNotes:
- * 1.1 - added starting message and able to enter help command 
- * 
+ * 1.1 - added starting message and able to enter help command
+ * 1.2 - added logarithm
+ * 1.3 - fixes
+ * 1.4, 1.4.1alpha, 1.4.2beta, 1.4.3prerealese
+ * 1.4.4realese - added factorial, double factorial & fixes
  */
 
 package calculator;
@@ -56,18 +59,22 @@ public class Main {
 		int j = 0;
 		boolean isFound = false;
 		
-		//2D array of valid operators
-		
-		String[][] validOperators = { 	{ "+", "plus" },
-										{ "-", "minus" },
+		// 2D array of valid operators
+
+		String[][] validOperators = { 
+										{ "+", "plus" }, { "-", "minus" },
 										{ "*", "multip", "multipl", "multiply" },
 										{ "/", ":", "division", "div", },
-										{ "sqrt", "root", "rt"},
-										{ "^", "power", "pow"}
+										{ "sqrt", "root", "rt" }, 
+										{ "^", "power", "pow" },
+										{ "cubedroot", "cbrt", "3rt" },
+										{ "logarithm", "log"},
+										{ "!", "f", "fact", "factorial"},
+										{ "!!", "df", "dfact", "dfactorial"} 
 									};
 
 		// Get first value
-		
+
 		do {
 			n1 = Assets.getDoubleInput("Value 1: ");
 		} while (n1.isNaN());
@@ -104,10 +111,30 @@ public class Main {
 
 		} while (!isFound);
 
-		// Check if operator is "root"
+		// Checking for operator that dont need for second value
 
+		
+		// Squared root
 		if (operator.equals("root") || operator.equals("rt") || operator.equals("sqrt")) {
 			System.out.println("Squared root from " + n1 + " = " + Math.sqrt(n1));
+			return;
+		}
+		
+		// Cubed root
+		else if (operator.equals("cubedroot") || operator.equals("cbrt") || operator.equals("3rt")) {
+			System.out.println("Cubed root from " + n1 + " = " + Math.cbrt(n1));
+			return;
+		}
+		
+		// Factorial
+		else if (operator.equals("!") || operator.equals("f") || operator.equals("fact") || operator.equals("factorial")) {
+			System.out.println(n1+"! = "+ Assets.Factorial(n1));
+			return;
+		}
+		
+		// Double Factorial
+		else if (operator.equals("!!")) {
+			System.out.println(n1+"!! = "+ Assets.DoubleFactorial(n1));
 			return;
 		}
 
@@ -118,7 +145,7 @@ public class Main {
 		} while (n2.isNaN());
 
 		// Calculations
-		
+
 		if (operator.equals("-") || operator.equals("minus")) {
 			System.out.println(n1 + " - " + n2 + " = " + (n1 - n2));
 		} else if (operator.equals("+") || operator.equals("plus")) {
@@ -131,6 +158,9 @@ public class Main {
 			System.out.println(n1 + " * " + n2 + " = " + (n1 * n2));
 		} else if (operator.equals("^") || operator.equals("power") || operator.equals("pow")) {
 			System.out.println(n1 + " ^ " + n2 + " = " + Math.pow(n1, n2));
+		} else if (operator.equals("logarithm") || operator.equals("log")) {
+			System.out.println("log " + n1 + " based " + n2 + " = " + (Math.log(n1) / (Math.log(n2))));
 		}
+
 	}
 }

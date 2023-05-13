@@ -6,7 +6,7 @@ How to run:
 	Windows: in file's folder do Shift + RMB -> Open Windows Powershell Window Here
 	Linux: in file's folder do RMB -> Open Terminal Here)
 
-2) Write java -jar ConsoleCalculator-v1.4.4.jar
+2) Write java -jar Calculator-v1.4.4.jar
 
 
 by @Kefyyyy
